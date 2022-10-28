@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+</head>
+<style>
+    p{
+        color: rgb(255, 255, 255);
+        font-size: 20px;
+    }
+    * {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+button {
+  background-color: #f12800;
+  border: none;
+  color: rgb(8, 2, 2);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: solid;
+  display: inline-block;
+  font-size: 16px;
+  margin: 2px 2px;
+  border-radius: 25px;
+}
+a{
+  text-decoration: none;
+}
+</style>
+<center>
+<body background="4.jpg">
+    <h1>HIDE AND SEEK GAME</h1>
+    <h2>INSTRUCTONS:</h2>
+    <div class="row">
+        <div class="column">
+          <img src="1.jfif" style="width:100px">
+          <p> This icon indicates gift </p>
+        </div>
+        <div class="column">
+            <img src="2.jfif"  style="width:75px" >
+            <p> This icon indicates miss</p>
+          </div>
+          <div class="column">
+            <img src="3.jfif"  style="width:70px">
+            <p> This icon indicates danger</p>
+          </div>
+        </div>
+        <center>
+        <p> * If you get 3 gifts it is declared as you won</p>
+        <p> * If you get miss, you need try another box to get gift</p>
+        <p> * if you get a danger the game ends</p>
+        <p> You will get a REFRESH button so that you can play again</p>
+        <p>  ALL THE BEST!!!!</p>
+    </center>
+    <button type="button"><a href="0.html">START GAME</a></button>
+</body>
+</center>
+</html>

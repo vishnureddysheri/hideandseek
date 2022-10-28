@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #Hello {
+        display: none;
+    }
+
+    #index {
+        margin-top: 150px;
+    }
+    .gamestatus{
+        font-size:50px; 
+        text-align: center;
+        color: aliceblue;
+    }
+</style>
+
+<body>
+    <body background="4.jpg">
+        <div id="WIN" style="display:none;" class="gamestatus">YOU WON!!!</div>
+        <div id="GAMEOVER" style="display:none;" class="gamestatus">GAME OVER!!!</div>
+
+    <center>
+        <table id="index">
+            <tr>
+                <td><img id="1" src="0.jfif" height="100px" width="100px" onclick="change1()"></td>
+                <td><img id="2" src="0.jfif" height="100px" width="100px" onclick="change2()"></td>
+                <td><img id="3" src="0.jfif" height="100px" width="100px" onclick="change3()"></td>
+                <td><img id="4" src="0.jfif" height="100px" width="100px" onclick="change4()"></td>
+            </tr>
+            <tr>
+                <td><img id="5" src="0.jfif" height="100px" width="100px" onclick="change5()"></td>
+                <td><img id="6" src="0.jfif" height="100px" width="100px" onclick="change6()"></td>
+                <td><img id="7" src="0.jfif" height="100px" width="100px" onclick="change7()"></td>
+                <td><img id="8" src="0.jfif" height="100px" width="100px" onclick="change8()"></td>
+            </tr>
+            <tr>
+                <td><img id="9" src="0.jfif" height="100px" width="100px" onclick="change9()"></td>
+                <td><img id="10" src="0.jfif" height="100px" width="100px" onclick="change10()"></td>
+                <td><img id="11" src="0.jfif" height="100px" width="100px" onclick="change11()"></td>
+                <td><img id="12" src="0.jfif" height="100px" width="100px" onclick="change12()"></td>
+            </tr>
+            <tr>
+                <td><img id="13" src="0.jfif" height="100px" width="100px" onclick="change13()"></td>
+                <td><img id="14" src="0.jfif" height="100px" width="100px" onclick="change14()"></td>
+                <td><img id="15" src="0.jfif" height="100px" width="100px" onclick="change15()"></td>
+                <td><img id="16" src="0.jfif" height="100px" width="100px" onclick="change16()"></td>
+            </tr>
+        </table>
+    </center>
+    <center>
+        <input type="button" id="Hello" onClick="document.location.reload(true);" value="Refresh" />
+    </center>
+    <script>
+        var i, random, k, m = 0, p = 0, h = 0; var box1, box2, box3, box4, box5, box6, box7, box8, box9, box10, box11, box12, box13, box14, box15, box16; success = 0, l1 = 0, l2 = 0, l3 = 0, l4 = 0, l5 = 0, l6 = 0, l7 = 0, l8 = 0, l9 = 0, l10 = 0, l11 = 0, l12 = 0, l13 = 0, l14 = 0, l15 = 0, l16 = 0;
+
+        for (i = 1; i <= 16; i++) {
+            k = Math.floor(Math.random() * 3) + 1;
+            if (k == 3 && m == 0) {
+                window["box" + i] = k;
+                m++;
+                
+            }
+            else if (k == 3 && m > 0) {
+                i--;
+            }
+            else if (k == 1 && p < 3) {
+                window["box" + i] = k;
+                p++;
+                
+            }
+            else if (k == 1 && p >= 3) {
+                i--;
+            }
+            else if (k == 2 && h < 12) {
+                window["box" + i] = k;
+
+                h++;
+
+            }
+            else {
+                i--;
+            }
+        }
+        function change1() {
+            var grid = document.getElementById("index");
+            if (l1 == 0) {
+                if (box1 == 3) {
+                    var x = document.getElementById("Hello");
+                    var end= document.getElementById("GAMEOVER");
+                    if (x.style.display === "block") {
+                        x.style.display = "none";
+
+                    }
+                    else {
+                        x.style.display = "block";
+                        end.style.display="block";
+                        box2 = 0; box3 = 0; box4 = 0; box5 = 0; box6 = 0; box7 = 0; box8 = 0; box9 = 0; box10 = 0; box11 = 0; box12 = 0; box13 = 0; box14 = 0; box15 = 0; box16 = 0;
+                    }
+                }
+                else if (box1 == 1 && success < 3) {
+                    success++;
+
+                    if (success == 3) {
+                        var x = document.getElementById("Hello");
+                        var win= document.getElementById("WIN");
+                        if (x.style.display === "block") {
+                            x.style.display = "none";
+
+                        }
+                        else {
+                            x.style.display = "block";
+                            win.style.display="block";
+                            box2 = 0; box3 = 0; box4 = 0; box5 = 0; box6 = 0; box7 = 0; box8 = 0; box9 = 0; box10 = 0; box11 = 0; box12 = 0; box13 = 0; box14 = 0; box15 = 0; box16 = 0;
+                        }
+
+                    }
+                }
+
+                var k = document.getElementById("1");
+                k.setAttribute("src", box1 + ".jfif");
+                l1++;
+            }
+            else {
+
+            }
+
+        }
+
+
+        function change2() {
+            var grid = document.getElementById("index");
+            if (l2 == 0) {
+                if (box2 == 3) {
+                    var x = document.getElementById("Hello");
+                    var end= document.getElementById("GAMEOVER");
+                    if (x.style.display === "block") {
+                        x.style.display = "none";
+                    }
+                    else {
+                        x.style.display = "block";
+                        end.style.display="block";
+                        box1 = 0; box3 = 0; box4 = 0; box5 = 0; box6 = 0; box7 = 0; box8 = 0; box9 = 0; box10 = 0; box11 = 0; box12 = 0; box13 = 0; box14 = 0; box15 = 0; box16 = 0;
+                    }
+                }
+                else if (box2 == 1 && success < 3) {
+                    success++;
+                    if (success == 3) {
+                        var x = document.getElementById("Hello");
+                        var win= document.getElementById("WIN");
+                        if (x.style.display === "block") {
+                            x.style.display = "none";
+
+                        }
+                        else {
+                            x.style.display = "block";
+                            win.style.display="block";
+                            box1 = 0; box3 = 0; box4 = 0; box5 = 0; box6 = 0; box7 = 0; box8 = 0; box9 = 0; box10 = 0; box11 = 0; box12 = 0; box13 = 0; box14 = 0; box15 = 0; box16 = 0;
+                        }
+
+                    }
+
+
+                }
+                var k = document.getElementById("2");
+                k.setAttribute("src", box2 + ".jfif");
+                l2++;
+            }
+            else {
+
+            }
+
+
+
+        }
+
+
+        function change3() {
+            var grid = document.getElementById("index");
+            if (l3 == 0) {
+                if (box3 == 3) {
+                    var x = document.getElementById("Hello");
+                    var end= document.getElementById("GAMEOVER");
+                    if (x.style.display === "block") {
+                        x.style.display = "none";
+                    }
+                    else {
+                        x.style.display = "block";
+                        end.style.display="block";
+                        box2 = 0; box1 = 0; box4 = 0; box5 = 0; box6 = 0; box7 = 0; box8 = 0; box9 = 0; box10 = 0; box11 = 0; box12 = 0; box13 = 0; box14 = 0; box15 = 0; box16 = 0;
+                    }
+                }
+                else if (box3 == 1 && success < 3) {
+                    success++;
+                    if (success == 3) {
+                        var x = document.getElementById("Hello");
+                        var win= document.getElementById("WIN");
+                        if (x.style.display === "block") {
+                            x.style.display = "none";
+
+                        }
+                        else {
+                            x.style.display = "block";
+                            win.style.display="block";
+                            box2 = 0; box1 = 0; box4 = 0; box5 = 0; box6 = 0; box7 = 0; box8 = 0; box9 = 0; box10 = 0; box11 = 0; box12 = 0; box13 = 0; box14 = 0; box15 = 0; box16 = 0;
+                        }
+                    }
+
+                }
+
+
+                var k = document.getElementById("3");
+                k.setAttribute("src", box3 + ".jfif");
+                l3++;
+            }
+            else {
+
+            }
+
+
+
+        }
+
+
+        function change4() {
+            var grid = document.getElementById("index");
+            if (l4 == 0) {
+                if (box4 == 3) {
+                    var x = document.getElementById("Hello");
+                    var end= document.getElementById("GAMEOVER");
+                    if (x.style.display === "block") {
+                        x.style.display = "none";
+                    }
+                    else {
+                        x.style.display = "block";
+                        end.style.display="block";
+                        box2 = 0; box3 = 0; box1 = 0; box5 = 0; box6 = 0; box7 = 0; box8 = 0; box9 = 0; box10 = 0; box11 = 0; box12 = 0; box13 = 0; box14 = 0; box15 = 0; box16 = 0;
+                    }
+                }
+                else if (box4 == 1 && success < 3) {
+                    success++;
+                    if (success == 3) {
+                        var x = document.getElementById("Hello");
+                        var win= document.getElementById("WIN");
+                        if (x.style.display === "block") {
+                            x.style.display = "none";
+
+                        }
+                        else {
+                            x.style.display = "block";
+                            win.style.display="block";
+                            box2 = 0; box3 = 0; box1 = 0; box5 = 0; box6 = 0; box7 = 0; box8 = 0; box9 = 0; box10 = 0; box11 = 0; box12 = 0; box13 = 0; box14 = 0; box15 = 0; box16 = 0;
+                        }
+                    }
+
+                }
+
+                var k = document.getElementById("4");
+                k.setAttribute("src", box4 + ".jfif");
+                l4++;
+            }
+            else {
+            }
+        }
+        function change5() {
+            var grid = document.getElementById("index");
+            if (l5 == 0) {
+                if (box5 == 3) {
+                    var x = document.getElementById("Hello");
+                    var end= document.getElementById("GAMEOVER");
+                    if (x.style.display === "block") {
+                        x.style.display = "none";
+                    }
+                    else {
+                        x.style.display = "block";
+                        end.style.display="block";
+                        box2 = 0; box3 = 0; box4 = 0; box1 = 0; box6 = 0; box7 = 0; box8 = 0; box9 = 0; box10 = 0; box11 = 0; box12 = 0; box13 = 0; box14 = 0; box15 = 0; box16 = 0;
+                    }
+                }
+                else if (box5 == 1 && success < 3) {
+                    success++;
+                    if (success == 3) {
+                        var x = document.getElementById("Hello");
+                        var win= document.getElementById("WIN");
+                        if (x.style.display === "block") {
+                            x.style.display = "none";
+
+                        }
+                        else {
+                            x.style.display = "block";
+                            win.style.display="block";
+                            box2 = 0; box3 = 0; box4 = 0; box1 = 0; box6 = 0; box7 = 0; box8 = 0; box9 = 0; box10 = 0; box11 = 0; box12 = 0; box13 = 0; box14 = 0; box15 = 0; box16 = 0;
+                        }
+                    }
+
+                }
+
+                var k = document.getElementById("5");
+                k.setAttribute("src", box5 + ".jfif");
+                l5++;
+            }
+            else {
+
+            }
+
+        }
+        function change6() {
+            var grid = document.getElementById("index");
+            if (l6 == 0) {
+
+                if (box6 == 3) {
+                    var x = document.getElementById("Hello");
+                    var end= document.getElementById("GAMEOVER");
+                    if (x.style.display === "block") {
+                        x.style.display = "none";
+                    }
+                    else {
+                        x.style.display = "block";
+                        end.style.display="block";
+                        box2 = 0; box3 = 0; box4 = 0; box5 = 0; box1 = 0; box7 = 0; box8 = 0; box9 = 0; box10 = 0; box11 = 0; box12 = 0; box13 = 0; box14 = 0; box15 = 0; box16 = 0;
+                    }
+                }
+                else if (box6 == 1 && success < 3) {
+                    success++;
+                    if (success == 3) {
+                        var x = document.getElementById("Hello");
+                        var win= document.getElementById("WIN");
+                        if (x.style.display === "block") {
+                            x.style.display = "none";
+
+                        }
+                        else {
+                            x.style.display = "block";
+                            win.style.display="block";
+                            box2 = 0; box3 = 0; box4 = 0; box5 = 0; box1 = 0; box7 = 0; box8 = 0; box9 = 0; box10 = 0; box11 = 0; box12 = 0; box13 = 0; box14 = 0; box15 = 0; box16 = 0;
+                        }
+                    }
+
+                }
+
+                var k = document.getElementById("6");
+                k.setAttribute("src", box6 + ".jfif");
+                l6++;
+            }
+            else {
+
+            }
+        }
+
+
+        function change7() {
+            var grid = document.getElementById("index");
+            if (l7 == 0) {
+                if (box7 == 3) {
+                    var x = document.getElementById("Hello");
+                    var end= document.getElementById("GAMEOVER");
+                    if (x.style.display === "block") {
+                        x.style.display = "none";
+                    }
+                    else {
+                        x.style.display = "block";
+                        end.style.display="block";
+                        box2 = 0; box3 = 0; box4 = 0; box5 = 0; box6 = 0; box1 = 0; box8 = 0; box9 = 0; box10 = 0; box11 = 0; box12 = 0; box13 = 0; box14 = 0; box15 = 0; box16 = 0;
+                    }
+                }
+                else if (box7 == 1 && success < 3) {
+                    success++;
+                    if (success == 3) {
+                        var x = document.getElementById("Hello");
+                        var win= document.getElementById("WIN");
+                        if (x.style.display === "block") {
+                            x.style.display = "none";
+
+                        }
+                        else {
+                            x.style.display = "block";
+                            win.style.display="block";
+                            box2 = 0; box3 = 0; box4 = 0; box5 = 0; box6 = 0; box1 = 0; box8 = 0; box9 = 0; box10 = 0; box11 = 0; box12 = 0; box13 = 0; box14 = 0; box15 = 0; box16 = 0;
+                        }
+                    }
+
+                }
+
+                var k = document.getElementById("7");
+                k.setAttribute("src", box7 + ".jfif");
+                l7++;
+            }
+            else {
+
+            }
+
+        }
+
+
+        function change8() {
+            var grid = document.getElementById("index");
+            if (l8 == 0) {
+                if (box8 == 3) {
+                    var x = document.getElementById("Hello");
+                    var end= document.getElementById("GAMEOVER");
+                    if (x.style.display === "block") {
+                        x.style.display = "none";
+                    }
+                    else {
+                        x.style.display = "block";
+                        end.style.display="block";
+                        box2 = 0; box3 = 0; box4 = 0; box5 = 0; box6 = 0; box7 = 0; box1 = 0; box9 = 0; box10 = 0; box11 = 0; box12 = 0; box13 = 0; box14 = 0; box15 = 0; box16 = 0;
+                    }
+                }
+                else if (box8 == 1 && success < 3) {
+                    success++;
+                    if (success == 3) {
+                        var x = document.getElementById("Hello");
+                        var win= document.getElementById("WIN");
+                        if (x.style.display === "block") {
+                            x.style.display = "none";
+
+                        }
+                        else {
+                            x.style.display = "block";
+                            win.style.display="block";
+                            box2 = 0; box3 = 0; box4 = 0; box5 = 0; box6 = 0; box7 = 0; box1 = 0; box9 = 0; box10 = 0; box11 = 0; box12 = 0; box13 = 0; box14 = 0; box15 = 0; box16 = 0;
+                        }
+                    }
+                }
+
+                var k = document.getElementById("8");
+
+                k.setAttribute("src", box8 + ".jfif");
+                l8++;
+            }
+            else {
+
+            }
+        }
+
+
+        function change9() {
+            var grid = document.getElementById("index");
+            if (l9 == 0) {
+                if (box9 == 3) {
+                    var x = document.getElementById("Hello");
+                    var end= document.getElementById("GAMEOVER");
+                    if (x.style.display === "block") {
+                        x.style.display = "none";
+                    }
+                    else {
+                        x.style.display = "block";
+                        end.style.display="block";
+                        box2 = 0; box3 = 0; box4 = 0; box5 = 0; box6 = 0; box7 = 0; box8 = 0; box1 = 0; box10 = 0; box11 = 0; box12 = 0; box13 = 0; box14 = 0; box15 = 0; box16 = 0;
+                    }
+                }
+                else if (box9 == 1 && success < 3) {
+                    success++;
+                    if (success == 3) {
+                        var x = document.getElementById("Hello");
+                        var win= document.getElementById("WIN");
+                        if (x.style.display === "block") {
+                            x.style.display = "none";
+
+                        }
+                        else {
+                            x.style.display = "block";
+                            win.style.display="block";
+                            box2 = 0; box3 = 0; box4 = 0; box5 = 0; box6 = 0; box7 = 0; box8 = 0; box1 = 0; box10 = 0; box11 = 0; box12 = 0; box13 = 0; box14 = 0; box15 = 0; box16 = 0;
+                        }
+                    }
+
+
+                }
+
+
+                var k = document.getElementById("9");
+                k.setAttribute("src", box9 + ".jfif");
+                l9++;
+            }
+            else {
+
+            }
+        }
+        function change10() {
+            var grid = document.getElementById("index");
+            if (l10 == 0) {
+                if (box10 == 3) {
+                    var x = document.getElementById("Hello");
+                    var end= document.getElementById("GAMEOVER");
+                    if (x.style.display === "block") {
+                        x.style.display = "none";
+                    }
+                    else {
+                        x.style.display = "block";
+                        end.style.display="block";
+                        box2 = 0; box3 = 0; box4 = 0; box5 = 0; box6 = 0; box7 = 0; box8 = 0; box9 = 0; box1 = 0; box11 = 0; box12 = 0; box13 = 0; box14 = 0; box15 = 0; box16 = 0;
+                    }
+                }
+                else if (box10 == 1 && success < 3) {
+                    success++;
+                    if (success == 3) {
+                        var x = document.getElementById("Hello");
+                        var win= document.getElementById("WIN");
+                        if (x.style.display === "block") {
+                            x.style.display = "none";
+
+                        }
+                        else {
+                            x.style.display = "block";
+                            win.style.display="block";
+                            box2 = 0; box3 = 0; box4 = 0; box5 = 0; box6 = 0; box7 = 0; box8 = 0; box9 = 0; box1 = 0; box11 = 0; box12 = 0; box13 = 0; box14 = 0; box15 = 0; box16 = 0;
+                        }
+                    }
+
+
+                }
+
+
+                var k = document.getElementById("10");
+                k.setAttribute("src", box10 + ".jfif");
+                l10++;
+            }
+            else {
+
+            }
+        }
+        function change11() {
+            var grid = document.getElementById("index");
+            if (l11 == 0) {
+                if (box11 == 3) {
+                    var x = document.getElementById("Hello");
+                    var end= document.getElementById("GAMEOVER");
+                    if (x.style.display === "block") {
+                        x.style.display = "none";
+                    }
+                    else {
+                        x.style.display = "block";
+                        end.style.display="block";
+                        box2 = 0; box3 = 0; box4 = 0; box5 = 0; box6 = 0; box7 = 0; box8 = 0; box9 = 0; box10 = 0; box1 = 0; box12 = 0; box13 = 0; box14 = 0; box15 = 0; box16 = 0;
+                    }
+                }
+                else if (box11 == 1 && success < 3) {
+                    success++;
+                    if (success == 3) {
+                        var x = document.getElementById("Hello");
+                        var win= document.getElementById("WIN");
+                        if (x.style.display === "block") {
+                            x.style.display = "none";
+
+                        }
+                        else {
+                            x.style.display = "block";
+                            win.style.display="block";
+                            box2 = 0; box3 = 0; box4 = 0; box5 = 0; box6 = 0; box7 = 0; box8 = 0; box9 = 0; box10 = 0; box1 = 0; box12 = 0; box13 = 0; box14 = 0; box15 = 0; box16 = 0;
+                        }
+                    }
+
+
+                }
+
+
+                var k = document.getElementById("11");
+                k.setAttribute("src", box11 + ".jfif");
+                l11++;
+            }
+            else {
+
+            }
+        }
+        function change12() {
+            var grid = document.getElementById("index");
+            if (l12 == 0) {
+                if (box12 == 3) {
+                    var x = document.getElementById("Hello");
+                    var end= document.getElementById("GAMEOVER");
+                    if (x.style.display === "block") {
+                        x.style.display = "none";
+                    }
+                    else {
+                        x.style.display = "block";
+                        end.style.display="block";
+                        box2 = 0; box3 = 0; box4 = 0; box5 = 0; box6 = 0; box7 = 0; box8 = 0; box9 = 0; box10 = 0; box11 = 0; box1 = 0; box13 = 0; box14 = 0; box15 = 0; box16 = 0;
+                    }
+                }
+                else if (box12 == 1 && success < 3) {
+                    success++;
+                    if (success == 3) {
+                        var x = document.getElementById("Hello");
+                        var win= document.getElementById("WIN");
+                        if (x.style.display === "block") {
+                            x.style.display = "none";
+
+                        }
+                        else {
+                            x.style.display = "block";
+                            win.style.display="block";
+                            box2 = 0; box3 = 0; box4 = 0; box5 = 0; box6 = 0; box7 = 0; box8 = 0; box9 = 0; box10 = 0; box11 = 0; box1 = 0; box13 = 0; box14 = 0; box15 = 0; box16 = 0;
+                        }
+                    }
+
+
+                }
+
+
+                var k = document.getElementById("12");
+                k.setAttribute("src", box12 + ".jfif");
+                l12++;
+            }
+            else {
+
+            }
+        }
+        function change13() {
+            var grid = document.getElementById("index");
+            if (l13 == 0) {
+                if (box13 == 3) {
+                    var x = document.getElementById("Hello");
+                    var end= document.getElementById("GAMEOVER");
+                    if (x.style.display === "block") {
+                        x.style.display = "none";
+                    }
+                    else {
+                        x.style.display = "block";
+                        end.style.display="block";
+                        box2 = 0; box3 = 0; box4 = 0; box5 = 0; box6 = 0; box7 = 0; box8 = 0; box9 = 0; box10 = 0; box11 = 0; box12 = 0; box1 = 0; box14 = 0; box15 = 0; box16 = 0;
+                    }
+                }
+                else if (box13 == 1 && success < 3) {
+                    success++;
+                    if (success == 3) {
+                        var x = document.getElementById("Hello");
+                        var win= document.getElementById("WIN");
+                        if (x.style.display === "block") {
+                            x.style.display = "none";
+
+                        }
+                        else {
+                            x.style.display = "block";
+                            win.style.display="block";
+                            box2 = 0; box3 = 0; box4 = 0; box5 = 0; box6 = 0; box7 = 0; box8 = 0; box9 = 0; box10 = 0; box11 = 0; box12 = 0; box1 = 0; box14 = 0; box15 = 0; box16 = 0;
+                        }
+                    }
+
+
+                }
+
+
+                var k = document.getElementById("13");
+                k.setAttribute("src", box13 + ".jfif");
+                l13++;
+            }
+            else {
+
+            }
+        }
+        function change14() {
+            var grid = document.getElementById("index");
+            if (l14 == 0) {
+                if (box14 == 3) {
+                    var x = document.getElementById("Hello");
+                    var end= document.getElementById("GAMEOVER");
+                    if (x.style.display === "block") {
+                        x.style.display = "none";
+                    }
+                    else {
+                        x.style.display = "block";
+                        end.style.display="block";
+                        box2 = 0; box3 = 0; box4 = 0; box5 = 0; box6 = 0; box7 = 0; box8 = 0; box9 = 0; box10 = 0; box11 = 0; box12 = 0; box13 = 0; box1 = 0; box15 = 0; box16 = 0;
+                    }
+                }
+                else if (box14 == 1 && success < 3) {
+                    success++;
+                    if (success == 3) {
+                        var x = document.getElementById("Hello");
+                        var win= document.getElementById("WIN");
+                        if (x.style.display === "block") {
+                            x.style.display = "none";
+
+                        }
+                        else {
+                            x.style.display = "block";
+                            win.style.display="block";
+                            box2 = 0; box3 = 0; box4 = 0; box5 = 0; box6 = 0; box7 = 0; box8 = 0; box9 = 0; box10 = 0; box11 = 0; box12 = 0; box13 = 0; box1 = 0; box15 = 0; box16 = 0;
+                        }
+                    }
+
+
+                }
+
+
+                var k = document.getElementById("14");
+                k.setAttribute("src", box14 + ".jfif");
+                l14++;
+            }
+            else {
+
+            }
+        }
+        function change15() {
+            var grid = document.getElementById("index");
+            if (l15 == 0) {
+                if (box15 == 3) {
+                    var x = document.getElementById("Hello");
+                    var end= document.getElementById("GAMEOVER");
+                    if (x.style.display === "block") {
+                        x.style.display = "none";
+                    }
+                    else {
+                        x.style.display = "block";
+                        end.style.display="block";
+                        box2 = 0; box3 = 0; box4 = 0; box5 = 0; box6 = 0; box7 = 0; box8 = 0; box9 = 0; box10 = 0; box11 = 0; box12 = 0; box13 = 0; box14 = 0; box1 = 0; box16 = 0;
+                    }
+                }
+                else if (box15 == 1 && success < 3) {
+                    success++;
+                    if (success == 3) {
+                        var x = document.getElementById("Hello");
+                        var win= document.getElementById("WIN");
+                        if (x.style.display === "block") {
+                            x.style.display = "none";
+
+                        }
+                        else {
+                            x.style.display = "block";
+                            win.style.display="block";
+                            box2 = 0; box3 = 0; box4 = 0; box5 = 0; box6 = 0; box7 = 0; box8 = 0; box9 = 0; box10 = 0; box11 = 0; box12 = 0; box13 = 0; box14 = 0; box1 = 0; box16 = 0;
+                        }
+                    }
+
+
+                }
+
+
+                var k = document.getElementById("15");
+                k.setAttribute("src", box15 + ".jfif");
+                l15++;
+            }
+            else {
+
+            }
+        }
+        function change16() {
+            var grid = document.getElementById("index");
+            if (l16 == 0) {
+                if (box16 == 3) {
+                    var x = document.getElementById("Hello");
+                    var end= document.getElementById("GAMEOVER");
+                    if (x.style.display === "block") {
+                        x.style.display = "none";
+                    }
+                    else {
+                        x.style.display = "block";
+                        end.style.display="block";
+                        box2 = 0; box3 = 0; box4 = 0; box5 = 0; box6 = 0; box7 = 0; box8 = 0; box9 = 0; box10 = 0; box11 = 0; box12 = 0; box13 = 0; box14 = 0; box15 = 0; box1 = 0;
+                    }
+                }
+                else if (box16 == 1 && success < 3) {
+                    success++;
+                    if (success == 3) {
+                        var x = document.getElementById("Hello");
+                        var win= document.getElementById("WIN");
+                        if (x.style.display === "block") {
+                            x.style.display = "none";
+
+                        }
+                        else {
+                            x.style.display = "block";
+                            win.style.display="block";
+                            box2 = 0; box3 = 0; box4 = 0; box5 = 0; box6 = 0; box7 = 0; box8 = 0; box9 = 0; box10 = 0; box11 = 0; box12 = 0; box13 = 0; box14 = 0; box15 = 0; box1 = 0;
+                        }
+                    }
+
+
+                }
+
+
+                var k = document.getElementById("16");
+                k.setAttribute("src", box16 + ".jfif");
+                l16++;
+            }
+            else {
+
+            }
+        }
+    </script>
+</body>
+
+</html>
